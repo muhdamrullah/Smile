@@ -35,7 +35,6 @@ void detectAndDraw( Mat& img, CascadeClassifier& cascade,
 string cascadeName = "/usr/share/opencv/haarcascades/haarcascade_frontalface_alt.xml";
 string nestedCascadeName = "/usr/share/opencv/haarcascades/haarcascade_smile.xml";
 
-
 int main( int argc, const char** argv )
 {
     CvCapture* capture = 0;
@@ -50,7 +49,6 @@ int main( int argc, const char** argv )
     size_t tryFlipOptLen = tryFlipOpt.length();
     string inputName;
     bool tryflip = false;
-
     help();
 
     CascadeClassifier cascade, nestedCascade;
@@ -236,6 +234,7 @@ void detectAndDraw( Mat& img, CascadeClassifier& cascade,
         const int smile_neighbors = (int)nestedObjects.size();
         static int max_neighbors=-1;
         static int min_neighbors=-1;
+	static int call_count=0;
         if (min_neighbors == -1) min_neighbors = smile_neighbors;
         max_neighbors = MAX(max_neighbors, smile_neighbors);
 
@@ -244,6 +243,31 @@ void detectAndDraw( Mat& img, CascadeClassifier& cascade,
         int rect_height = cvRound((float)img.rows * intensityZeroOne);
         CvScalar col = CV_RGB((float)255 * intensityZeroOne, 0, 0);
         rectangle(img, cvPoint(0, img.rows), cvPoint(img.cols/10, img.rows - rect_height), col, -1);
+//	char sTmp[128];
+	printf("%f\n",intensityZeroOne);
+//	int intense[10];
+//	int intense[intensityZeroOne] = 0;
+//	if (intense[intensityZeroOne] % 4 = 0)
+//	{
+//	z++;
+	if (intensityZeroOne>0.1)	{call_count++;}
+	printf("%d\n",call_count);
+	if (call_count % 5 == 1) 	
+	   {
+	    if (intensityZeroOne>0.1)	{system("ffplay -fs -autoexit 'Woman6_720.mp4'"); }
+           }
+//	z++;	
+//	{x2=x++ ;
+//	if (x2 % 4 == 0)	{printf("%d\n",x2);}
+//	} 
+//system("ffplay -fs -autoexit 'Woman6.mp4'"); }
+
+// 	} 
+//	intense[intensityZeroOne]++;
+//	for (int i=0;i>10;i++)
+//	{
+//		intense[i] =0;
+//	}
     }
 
     cv::imshow( "result", img );

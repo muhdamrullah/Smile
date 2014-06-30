@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/odroid/Downloads/Smile/smiledetect.cpp
+opencv2/objdetect/objdetect.hpp
+/home/odroid/Downloads/Smile/opencv2/objdetect/objdetect.hpp
+opencv2/highgui/highgui.hpp
+/home/odroid/Downloads/Smile/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/odroid/Downloads/Smile/opencv2/imgproc/imgproc.hpp
+opencv2/core/core.hpp
+/home/odroid/Downloads/Smile/opencv2/core/core.hpp
+opencv2/highgui/highgui_c.h
+/home/odroid/Downloads/Smile/opencv2/highgui/highgui_c.h
+cctype
+-
+iostream
+-
+iterator
+-
+stdio.h
+-
+
